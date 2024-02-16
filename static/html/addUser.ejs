@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить читателя</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Добавить читателя</h1>
+    </header>
+
+    <div class="root-container">
+        <div class="form-div">
+            <form action="/users/add" method="post">
+                <div class="form-inputs">
+                    <input type="text" name="fio" placeholder="ФИО">
+                </div>
+                <div class="form-checkboxes">
+                    <% if (books.length > 0) { %>
+                    <% for (let book of books) { %>
+                    <div class="checkbox-and-label">
+                        <input type="checkbox" autofocus class="" name="books" value="<%= book.booksId %>" />
+                        <label for="books">
+                            <%= book.booksName %>
+                        </label>
+                    </div>
+                    <% } %>
+                    <% } else { %>
+                    <p>Нет доступных книг для выбора</p>
+                    <% } %>
+                </div>
+                <div class="form-submit-buttons">
+                    <input type="submit" value="Подтвердить" class="confirm-button" />
+                    <a class="back-button" href="/users">Назад</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

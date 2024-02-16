@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/userlist.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title">Список пользователей</h1>
+
+        <div class="users">
+                <% for (let index = 0; index < readers.length; index++) { %>
+                    <div class="user">
+                        <div class="user-name">
+                            <%= readers[index].readersName %>
+                        </div>
+                            
+                        <div class="user-buttons">
+                            <a class="books-button" href="/users/<%= readers[index].readersId %>">
+                                Список книг
+                                <svg xmlns="http://www.w3.org/2000/svg" class="books-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                                    <path d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                                    <path d="M5 8h4" />
+                                    <path d="M9 16h4" />
+                                    <path d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z" />
+                                    <path d="M14 9l4 -1" />
+                                    <path d="M16 16l3.923 -.98" />
+                                </svg>
+                            </a>
+                            <form class="trash-button" action="/users/delete/<%= readers[index].readersId %>" method="post">
+                                <input type="submit" class="" value="Удалить">
+                                <input type="hidden" name="" value="<%= readers[index].readersId %>">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="trash-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M4 7l16 0" />
+                                    <path d="M10 11l0 6" />
+                                    <path d="M14 11l0 6" />
+                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                            </form>
+                        </div>
+                    </div>
+    
+                <% } %>
+        </div>
+    
+    
+        <div class="down-buttons">
+            <form class="add-user-button" action="/users/add" method="get">
+                <input type="submit" class="" value="Добавить пользователя">
+            </form>
+            <a class="back-button" href="/">Назад</a>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+:root {
+    --books-color: rgba(0, 255, 242, 0.596);
+    --users-color: rgba(0, 255, 55, 0.603);
+}
+
+html,
+body {
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 5em;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header>h1 {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(46, 46, 46);
+}
+
+.root-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-top: 100px;
+}
+
+.big-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(139, 93, 239);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+    background-color: rgb(93, 239, 237);
+}
+
+
+#user-button {
+    background-color: var(--users-color);
+}
+
+#book-button {
+    background-color: var(--books-color);
+}
+
+.form-div {
+    padding: 100px 100px;
+    background-color: var(--books-color);
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 2em;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+form {
+    max-width: 500px;
+}
+
+.form-div>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+#book-form {
+    background-color: var(--books-color);
+}
+
+#user-form {
+    background-color: var(--user-color);
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-submit-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .back-button {
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.confirm-button {
+    justify-self: auto;
+    padding: 10px 20px;
+    background-color: rgb(0, 255, 64);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.form-checkboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    flex: 1 0 50%;
+}
+
+/* input[type="submit"] {
+    background-color: rgba(0, 255, 55, 0.363);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+} */
+
+/* .edit-button {
+    background-color: rgb(255, 234, 0);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.delete-button {
+    background-color: rgb(255, 0, 0) !important;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+} */
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* table,
+th,
+tr,
+td {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px black solid;
+} */
+
+th {
+    background-color: rgb(144, 255, 255);
+}
+
+td {
+    text-align: center;
+}
+
+.table-form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-form-buttons form {
+    margin-right: 10px;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-buttons > div {
+    margin-right: 10px;
+}
+
+.add-user-form input[type="submit"] {
+    display: inline-block;
+    margin-right: 10px; /* Пространство между кнопками */
+}

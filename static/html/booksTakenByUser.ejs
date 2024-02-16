@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг читателя</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/userlist.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title">
+            <% if (books[0] != null) { %>
+            <h1 id="header"><%= books[0].readersName %></h1>
+            <% } else { %>
+            <h1>Читатель не взял ни одной книги</h1>
+            <% } %>
+        </h1>
+        <div class="users">
+            <% if (books[0] != null) { %>
+            <div class="book-list">
+                <ul>
+                    <% for (let book of books) { %>
+                    <li><%= book.booksName %></li>
+                    <% } %>
+                </ul>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="down-buttons">
+        <a class="back-button" href="/users">Назад</a>
+    </div>
+</body>
+
+</html>

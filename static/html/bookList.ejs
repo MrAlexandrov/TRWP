@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/userlist.css">
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>Список книг</h1>
+        </header>
+
+        <table>
+            <thead>
+                <!-- <div class="user"> -->
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Количество</th>
+                    <th>Действия</th>
+                <!-- </div> -->
+            </thead>
+            <tbody>
+                <% if (books.length > 0) { %>
+                <% for (let book of books) { %>
+                <tr>
+                    <td><%= book.booksName %></td>
+                    <td><%= book.booksAuthor %></td>
+                    <td><%= book.booksCount %></td>
+                    <td class="user-buttons">
+                        <a class="book-button" href="/books/<%= book.booksId %>/edit">Изменить</a>
+                        <!-- <form action="/books/delete/<%= book.booksId %>" method="post">
+                            <input type="hidden" name="" value="<%= book.booksId %>">
+                            <button class="delete-button" type="submit">Удалить</button>
+                        </form> -->
+
+                        <form class="trash-button" action="/books/delete/<%= book.booksId %>" method="post">
+                            <!-- <input type="hidden" name="" value="Изменить<%= book.booksId %>"> -->
+                            <input type="submit" class="" value="Удалить">
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+                <% } else { %>
+                <tr>
+                    <td colspan="4">Нет доступных книг</td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <div class="down-buttons">
+            <form class="add-user-button" action="/books/add" method="get">
+                <input type="submit" value="Добавить книгу">
+            </form>
+            <a class="back-button" href="/">Назад</a>
+        </div>
+    </div>
+</body>
+
+</html>

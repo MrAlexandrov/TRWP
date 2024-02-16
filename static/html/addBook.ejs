@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление книгами</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <% if (typeof editBook !== "undefined" ) { %>
+        <h1>Изменить данные книги</h1>
+        <% } else { %>
+        <h1>Добавить книгу</h1>
+        <% } %>
+    </header>
+
+    <div class="root-content">
+        <div class="form-div">
+            <form action="<%= typeof editBook !== 'undefined' ? '/books/' + editBook[0].booksId + '/edit' : '/books/add' %>" method="post">
+                <div class="form-inputs">
+                    <input type="text" name="bookName" placeholder="Название книги" value="<%= typeof editBook !== 'undefined' ? editBook[0].booksName : '' %>">
+                    <input type="text" name="bookAuthor" placeholder="Автор книги" value="<%= typeof editBook !== 'undefined' ? editBook[0].booksAuthor : '' %>">
+                    <input type="text" name="bookCount" placeholder="Количество копий" value="<%= typeof editBook !== 'undefined' ? editBook[0].booksCount : '' %>">
+                </div>
+                <div class="form-submit-buttons">
+                    <input type="submit" value="Подтвердить" class="confirm-button" />
+                    <a class="back-button" href="/books">Назад</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

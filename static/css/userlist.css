@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.253), rgba(128, 0, 128, 0.308));
+    background-repeat: round;
+    height: 100vh;
+}
+
+a, a:hover, input, input:hover {
+    text-decoration: none;
+    color: inherit;
+    /* background-color: inherit; */
+    border: none;
+    border-radius: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    background: transparent;
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 15px;
+}
+
+.title {
+    font-family: "Lobster", sans-serif;
+    width: 50%;
+    text-align: center;
+}
+
+.users {
+    width: 50%;
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    border-radius: inherit;
+}
+
+.user {
+    /* border: 1px solid blue; */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: inherit;
+    padding: 0px 10px 0px 10px;
+    background: rgba(255, 255, 255, 0.664);
+    border: 1px solid rgba(214, 214, 214, 0.692);
+}
+
+.user-buttons {
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.user-buttons > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    height: 50%;
+    /* padding: 0; */
+    border-radius: inherit;
+    margin-left: 5px;
+    font-size: 0.80rem;
+    /* color: white; */
+    /* font-weight: bold; */
+    transition: .2s ease-in;
+}
+
+.user-buttons > *:hover {
+    transform: scale(101%);
+}
+
+.delete-button {
+    border-radius: inherit;
+}
+
+.books-icon, .trash-icon {
+    width: 20px;
+}
+
+.books-icon {
+    margin-left: 5px;
+}
+
+.trash-button input {
+    /* background: white; */
+    border: #FF5252;
+    border-radius: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+}
+
+.books-button {
+    /* border: 1px solid rgb(233, 179, 3); */
+    border: 1px solid #388E3C;
+}
+
+.trash-button {
+    border: 1px solid rgb(255, 51, 51);
+}
+
+
+.down-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: inherit;
+    color: white;
+}
+
+.down-buttons > * {
+    /* font-weight: bold; */
+    font-size: 0.9rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: inherit;
+    /* height: 50px; */
+}
+
+.add-user-button {
+    background: rgba(0, 0, 255, 0.705);
+}
+
+.add-user-button > input {
+    /* background: transparent */
+}
+
+.back-button {
+    background: rgba(128, 128, 128, 0.685);
+}
+
